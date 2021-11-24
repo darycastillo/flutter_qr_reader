@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
 class ScanButton extends StatelessWidget {
@@ -10,7 +8,7 @@ class ScanButton extends StatelessWidget {
     return FloatingActionButton(
       elevation: 0,
       onPressed: () {},
-      child: Icon(Icons.filter_center_focus),
+      child: const Icon(Icons.filter_center_focus),
     );
   }
 }

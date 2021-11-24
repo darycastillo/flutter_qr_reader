@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -7,8 +5,9 @@ import 'package:flutter_qr_reader/pages/pages.dart';
 import 'package:flutter_qr_reader/widgets/widgets.dart';
 import 'package:flutter_qr_reader/providers/ui_provider.dart';
 
-// ignore: use_key_in_widget_constructors
 class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,8 +19,8 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: const _HomePageBody(),
-      bottomNavigationBar: CustomNavigationBar(),
-      floatingActionButton: ScanButton(),
+      bottomNavigationBar: const CustomNavigationBar(),
+      floatingActionButton: const ScanButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
@@ -39,7 +38,7 @@ class _HomePageBody extends StatelessWidget {
       case 0:
         return MapasPage();
       case 1:
-        return DireccionesPage();
+        return const DireccionesPage();
       default:
         return MapasPage();
     }

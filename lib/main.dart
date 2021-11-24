@@ -4,10 +4,11 @@ import 'package:flutter_qr_reader/pages/pages.dart';
 import 'package:flutter_qr_reader/providers/ui_provider.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
-// ignore: use_key_in_widget_constructors
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Material App',
         initialRoute: 'home',
-        routes: {'home': (_) => HomePage(), 'mapa': (_) => MapaPage()},
+        routes: {'home': (_) => const HomePage(), 'mapa': (_) => MapaPage()},
         theme: ThemeData(
             primarySwatch: Colors.deepPurple,
             floatingActionButtonTheme: const FloatingActionButtonThemeData(

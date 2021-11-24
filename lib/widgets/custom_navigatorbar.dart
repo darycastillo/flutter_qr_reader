@@ -1,6 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-// ignore_for_file: prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_qr_reader/providers/ui_provider.dart';
@@ -17,7 +14,7 @@ class CustomNavigationBar extends StatelessWidget {
     return BottomNavigationBar(
       onTap: (int index) => uiProvider.selectedMenuOpt = index,
       currentIndex: currentIndex,
-      items: [
+      items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.map),
           label: 'Mapa',
