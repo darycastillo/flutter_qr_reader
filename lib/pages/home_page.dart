@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_qr_reader/providers/scan_list_provider.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_qr_reader/pages/pages.dart';
@@ -15,7 +16,12 @@ class HomePage extends StatelessWidget {
         elevation: 0,
         title: const Text('Historial'),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.delete_forever))
+          IconButton(
+              onPressed: () {
+                Provider.of<ScanListProvider>(context, listen: false)
+                    .borrarTodos();
+              },
+              icon: const Icon(Icons.delete_forever))
         ],
       ),
       body: const _HomePageBody(),
@@ -34,13 +40,18 @@ class _HomePageBody extends StatelessWidget {
     final uiProvider = Provider.of<UiProvider>(context);
     final currentIndex = uiProvider.selectedMenuOpt;
 
+    final scanListProvider =
+        Provider.of<ScanListProvider>(context, listen: false);
+
     switch (currentIndex) {
       case 0:
-        return MapasPage();
+        scanListProvider.cargarScansPorTipo('geo');
+        return const MapasPage();
       case 1:
+        scanListProvider.cargarScansPorTipo('http');
         return const DireccionesPage();
       default:
-        return MapasPage();
+        return const MapasPage();
     }
   }
 }

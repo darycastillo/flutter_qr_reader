@@ -1,12 +1,12 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
+import 'package:flutter_qr_reader/widgets/widgets.dart';
+
 class MapasPage extends StatelessWidget {
+  const MapasPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Mapas page'),
-    );
+    return const ScanTiles(tipo: 'geo');
   }
 }
